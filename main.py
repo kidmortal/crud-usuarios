@@ -1,45 +1,41 @@
 from flask import Flask, jsonify, request
-from bd import usuarios
+from bd import users
 
 
 app = Flask(__name__)
 
 
-@app.route('/usuarios', methods=['GET'])
-def obter_usuarios():
-    return jsonify(usuarios)
+@app.route('/users', methods=['GET'])
+def get_user():
+    return jsonify(users)
 
 
-@app.route('/usuario/<int:id>', methods=['GET'])
-def obter_usuarios_por_id(id):
-    for usuario in usuarios:
-        if usuario.get('id') == id:
-            return jsonify(usuario)
+@app.route('/user/<int:id>', methods=['GET'])
+def get_user_by_id(id):
+    for user in users:
+        if user.get('id') == id:
+            return jsonify(user)
 
 
-@app.route('/editar/<int:id>', methods=['PUT'])
-def editar_usuario(id):
-    usuario_alterado = request.get_json()
-    for indice, usuario in enumerate(usuarios):
-        if usuario.get('id') == id:
-            usuarios[indice].update(usuario_alterado)
-            return jsonify(usuarios[indice])
+@app.route('/edit/<int:id>', methods=['PUT'])
+def edit_user_by_id(id):
+    edited_user = request.get_json()
+    for index, user in enumerate(users):
+        if user.get('id') == id:
+            users[index].update(edited_user)
+            return jsonify(users[index])
 
 
-@app.route('/deletar/<int:id>', methods=['DELETE'])
-def deletar_usuario(id):
-    for indice, usuario in enumerate(usuarios):
-        if usuario.get('id') == id:
-            del usuarios[indice]
-            return jsonify(usuarios)
-        
-
-@app.route('/cadastrar', methods=['POST'])
-def cadastrar_usuario():
-    novo_usuario = request.get_json()
-    usuarios.append(novo_usuario)
-    return jsonify(usuarios)
+@app.route('/delete/<int:id>', methods=['DELETE'])
+def delete_user_by_id(id):
+    for index, user in enumerate(users):
+        if user.get('id') == id:
+            del users[index]
+            return jsonify(users)
 
 
-
-
+@app.route('/register', methods=['POST'])
+def register_user():
+    new_user = request.get_json()
+    users.append(new_user)
+    return jsonify(users)

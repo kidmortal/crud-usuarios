@@ -18,39 +18,39 @@ API que disponibiliza o cadastro, consulta, edição e exclusão de usuários.
 ### Consulta usuários (method = GET)
 
 * Retorna todos os usuários cadastrados  
-http://localhost:5000/usuarios 
+http://localhost:5000/users
 
 * Retorna usuário pelo id  
-http://localhost:5000/usuario/{id} 
+http://localhost:5000/user/{id} 
 
 ### Edita usuário (method = PUT)
 
 * Altera informações do usuário com base no id e body  
-http://localhost:5000/editar/{id} 
+http://localhost:5000/edit/{id} 
 
 * Body:
 ```
 {
-    'Nome': string,
-    'E-mail': string,
+    "Name": string,
+    "Email": string
 } 
 ```
 
 ### Deleta usuário (method = DELETE)
 * Remove usuário a partir do id  
-http://localhost:5000/deletar/{id} 
+http://localhost:5000/delete/{id} 
 
 ### Cadastra usuário (method = POST)
 * Cria um novo usuário com base no body    
-http://localhost:5000/cadastrar 
+http://localhost:5000/register
 
 * Body:
 ```
 {
-    'id': int,
-    'Nome': string,
-    'E-mail': string,
-}
+    "id": int,
+    "Name": string,
+    "Email": string
+} 
 ```
 
 ## Melhorias/funcionalidades a serem incrementadas

@@ -1,25 +1,25 @@
-usuarios = [
+users = [
     {
         'id': 1,
-        'Nome': 'sloan',
-        'E-mail': 'isloan@gmail.com',
+        'Name': 'sloan',
+        'Email': 'isloan@gmail.com',
     },
 
     {
         'id': 2,
-        'Nome': 'Teresa',
-        'E-mail': 'tersa@gmail.com',
+        'Name': 'Teresa',
+        'Email': 'tersa@gmail.com',
     },
-    
+
     {
-        'id':3,
-        'Nome': 'Ryan',
-        'E-mail': 'ryan@gmail.com',       
+        'id': 3,
+        'Name': 'Ryan',
+        'Email': 'ryan@gmail.com',
     },
 
     {
         'id': 4,
-        'Nome': 'Reynald',
-        'E-mail': 'reynald@gmail.com',       
+        'Name': 'Reynald',
+        'Email': 'reynald@gmail.com',
     },
 ]
